@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jonathan Stancill | Aerospace engineering student at Georgia Tech. Engineering projects in aircraft design, propulsion, and research.">
+  <meta name="theme-color" content="#0b1321">
+  <title>Jonathan Stancill | Aerospace Engineering</title>
+  <style>
+    :root { --navy:#0b1321; --ink:#142136; --muted:#617086; --line:#dce4ed; --paper:#f8fafc; --blue:#1965ad; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font:16px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color:var(--ink); background:var(--paper); }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:3px solid #78b8ff; outline-offset:4px; }
+    .container { width:min(1100px, calc(100% - 42px)); margin:auto; }
+    .nav { background:var(--navy); color:white; border-bottom:1px solid #263246; }
+    .nav-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-size:1.07rem; font-weight:750; letter-spacing:.01em; white-space:nowrap; }
+    .nav-links { display:flex; gap:27px; align-items:center; flex-wrap:wrap; font-size:.89rem; color:#c7d2e1; }
+    .nav-links a:hover,.footer a:hover { color:white; text-decoration:underline; }
+    .hero { color:white; background:linear-gradient(125deg,#0b1321 0%,#112942 73%,#173454 100%); padding:104px 0 106px; }
+    .eyebrow { color:#90c9f7; text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; font-weight:750; margin:0 0 22px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(2.7rem,6.8vw,5.4rem); letter-spacing:-.055em; line-height:1.08; margin-bottom:23px; font-weight:780; }
+    .hero .lead { color:#c5d4e2; font-size:clamp(1rem,2.2vw,1.25rem); max-width:730px; line-height:1.75; }
+    .buttons { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; padding:11px 19px; border-radius:5px; font-weight:650; font-size:.9rem; border:1px solid #6a88a4; transition:transform .2s,background .2s; }
+    .button:hover { transform:translateY(-2px); }
+    .button.primary { background:#e8f4ff; border-color:#e8f4ff; color:#102a45; }
+    .button.secondary { background:transparent; color:white; }
+    section { padding:82px 0; }
+    .section-head { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin-bottom:32px; }
+    h2 { font-size:clamp(1.8rem,3vw,2.4rem); letter-spacing:-.035em; line-height:1.25; margin:0 0 9px; }
+    .section-sub { color:var(--muted); max-width:650px; margin:0; }
+    .section-tag { font-size:.73rem; letter-spacing:.14em; color:var(--blue); text-transform:uppercase; font-weight:800; margin-bottom:12px; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .card { background:white; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(12,31,51,.035); }
+    .card-art { height:205px; display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(0deg, transparent,transparent 38px,rgba(105,151,185,.10) 39px),linear-gradient(135deg,#17314a,#2e536c); color:#b7c9db; font-size:.79rem; letter-spacing:.18em; text-transform:uppercase; text-align:center; padding:20px; }
+    .card-body { padding:26px 27px 30px; }
+    .meta { font-size:.77rem; color:var(--blue); text-transform:uppercase; font-weight:750; letter-spacing:.1em; margin-bottom:11px; }
+    h3 { font-size:1.3rem; letter-spacing:-.02em; margin-bottom:10px; line-height:1.35; }
+    .card p { color:#5c6a79; font-size:.95rem; margin-bottom:15px; }
+    .pill { display:inline-block; font-size:.75rem; padding:4px 10px; background:#eef3f8; color:#38546a; border-radius:4px; margin:0 5px 6px 0; }
+    .about-wrap { display:grid; grid-template-columns:1.2fr .8fr; gap:60px; }
+    .about { background:#edf3f8; border-top:1px solid #dce7f0; border-bottom:1px solid #dce7f0; }
+    .about p { color:#405368; }
+    .details { border-left:2px solid #8ab7df; padding-left:26px; }
+    .detail { margin-bottom:28px; }
+    .detail:last-child { margin-bottom:0; }
+    .detail strong { display:block; color:#11283e; font-size:.9rem; margin-bottom:4px; }
+    .detail span { color:#53677b; font-size:.9rem; }
+    .contact { text-align:center; }
+    .contact p { color:var(--muted); max-width:580px; margin:0 auto 25px; }
+    .contact .button { background:var(--navy); color:white; border-color:var(--navy); }
+    .contact-links { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:24px; color:var(--blue); font-size:.9rem; }
+    .contact-links a:hover { text-decoration:underline; }
+    .footer { background:var(--navy); color:#aab8ca; padding:25px 0; font-size:.82rem; }
+    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+    @media(max-width:700px) { .nav-inner { align-items:flex-start; flex-direction:column; padding:18px 0; gap:10px; } .nav-links { gap:16px; } .hero { padding:76px 0; } section { padding:60px 0; } .projects,.about-wrap { grid-template-columns:1fr; } .about-wrap { gap:32px; } .card-art { height:160px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Jonathan Stancill</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <!-- Add a resume.pdf file to your repository, then uncomment this link:
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a> -->
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="hero">
+      <div class="container">
+        <p class="eyebrow">Georgia Institute of Technology · Aerospace Engineering</p>
+        <h1>Jonathan Stancill</h1>
+        <p class="lead">Aerospace engineering student focused on aircraft design, aerodynamics, and propulsion. I enjoy taking engineering ideas from analysis and design into hands-on testing.</p>
+        <div class="buttons">
+          <a class="button primary" href="#projects">Explore projects →</a>
+          <a class="button secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-tag">Selected work</div><h2 id="projects-title">Engineering projects</h2><p class="section-sub">Research, design, and hands-on engineering work. Detailed project write-ups and technical results are being added.</p></div>
+        </div>
+        <div class="projects">
+          <article class="card">
+            <div class="card-art" aria-label="Placeholder for GT Supersonics project image">Project image coming soon</div>
+            <div class="card-body">
+              <div class="meta">Georgia Tech Supersonics</div>
+              <h3>Supersonic aircraft & propulsion</h3>
+              <p>Engineering work with GT Supersonics, including involvement in aircraft design and afterburner development and testing. A technical case study is in progress.</p>
+              <span class="pill">Aircraft design</span><span class="pill">Propulsion</span><span class="pill">Testing</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-art" aria-label="Placeholder for ISEF research project image">Project image coming soon</div>
+            <div class="card-body">
+              <div class="meta">Independent research · ISEF</div>
+              <h3>Hydrodynamics & engineering research</h3>
+              <p>An early research project that introduced me to hydrodynamics and propulsion design, and helped shape my interest in aerospace engineering. Project details are coming soon.</p>
+              <span class="pill">Research</span><span class="pill">Hydrodynamics</span><span class="pill">Design</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container about-wrap">
+        <div>
+          <div class="section-tag">Background</div><h2 id="about-title">About me</h2>
+          <p>I'm an aerospace engineering student at the Georgia Institute of Technology with a strong interest in aerodynamics, propulsion, and aircraft design.</p>
+          <p>My interest in engineering began with robotics and expanded through research involving hydrodynamics and propulsion. At Georgia Tech, working with GT Supersonics has given me opportunities to explore the engineering challenges behind high-speed flight.</p>
+          <p>I'm particularly interested in work that combines rigorous analysis with practical design, building, and testing.</p>
+        </div>
+        <aside class="details" aria-label="Education and interests">
+          <div class="detail"><strong>Education</strong><span>Georgia Institute of Technology<br>B.S. Aerospace Engineering, in progress</span></div>
+          <div class="detail"><strong>Technical interests</strong><span>Aerodynamics · Propulsion · Aircraft design · Engineering research</span></div>
+          <div class="detail"><strong>Engineering team</strong><span>Georgia Tech Supersonics</span></div>
+        </aside>
+      </div>
+    </section>
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-tag">Connect</div><h2 id="contact-title">Let's connect</h2>
+        <p>Interested in discussing aerospace projects, research, or engineering opportunities? You can find my work on GitHub or reach out through LinkedIn.</p>
+        <a class="button" href="https://github.com/jonathanstancill" target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+        <div class="contact-links">
+          <!-- Replace # with your actual LinkedIn profile URL: -->
+          <a href="#contact" title="Add your LinkedIn URL here">LinkedIn (add link)</a>
+          <!-- Replace the text below with your public professional contact email when ready: -->
+          <span>Email (add address)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Jonathan Stancill</span><span>Built with GitHub Pages</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
