@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GT Supersonics engineering projects by Jonathan Stancill: afterburner development, 3K fuel-system pressure analysis, and nTop wing design."><title>GT Supersonics | Jonathan Stancill</title><style>
+    :root { --navy:#0b1321; --ink:#142136; --muted:#617086; --line:#dce4ed; --paper:#f8fafc; --blue:#1965ad; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font:16px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color:var(--ink); background:var(--paper); }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:3px solid #78b8ff; outline-offset:4px; }
+    .container { width:min(1100px, calc(100% - 42px)); margin:auto; }
+    .nav { background:var(--navy); color:white; border-bottom:1px solid #263246; }
+    .nav-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-size:1.07rem; font-weight:750; letter-spacing:.01em; white-space:nowrap; }
+    .nav-links { display:flex; gap:27px; align-items:center; flex-wrap:wrap; font-size:.89rem; color:#c7d2e1; }
+    .nav-links a:hover,.footer a:hover { color:white; text-decoration:underline; }
+    .hero { color:white; background:linear-gradient(125deg,#0b1321 0%,#112942 73%,#173454 100%); padding:104px 0 106px; }
+    .eyebrow { color:#90c9f7; text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; font-weight:750; margin:0 0 22px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(2.7rem,6.8vw,5.4rem); letter-spacing:-.055em; line-height:1.08; margin-bottom:23px; font-weight:780; }
+    .hero .lead { color:#c5d4e2; font-size:clamp(1rem,2.2vw,1.25rem); max-width:730px; line-height:1.75; }
+    .buttons { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; padding:11px 19px; border-radius:5px; font-weight:650; font-size:.9rem; border:1px solid #6a88a4; transition:transform .2s,background .2s; }
+    .button:hover { transform:translateY(-2px); }
+    .button.primary { background:#e8f4ff; border-color:#e8f4ff; color:#102a45; }
+    .button.secondary { background:transparent; color:white; }
+    section { padding:82px 0; }
+    .section-head { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin-bottom:32px; }
+    h2 { font-size:clamp(1.8rem,3vw,2.4rem); letter-spacing:-.035em; line-height:1.25; margin:0 0 9px; }
+    .section-sub { color:var(--muted); max-width:650px; margin:0; }
+    .section-tag { font-size:.73rem; letter-spacing:.14em; color:var(--blue); text-transform:uppercase; font-weight:800; margin-bottom:12px; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .card { background:white; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(12,31,51,.035); }
+    .card-art { height:205px; display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(0deg, transparent,transparent 38px,rgba(105,151,185,.10) 39px),linear-gradient(135deg,#17314a,#2e536c); color:#b7c9db; font-size:.79rem; letter-spacing:.18em; text-transform:uppercase; text-align:center; padding:20px; }
+    .card-body { padding:26px 27px 30px; }
+    .meta { font-size:.77rem; color:var(--blue); text-transform:uppercase; font-weight:750; letter-spacing:.1em; margin-bottom:11px; }
+    h3 { font-size:1.3rem; letter-spacing:-.02em; margin-bottom:10px; line-height:1.35; }
+    .card p { color:#5c6a79; font-size:.95rem; margin-bottom:15px; }
+    .pill { display:inline-block; font-size:.75rem; padding:4px 10px; background:#eef3f8; color:#38546a; border-radius:4px; margin:0 5px 6px 0; }
+    .about-wrap { display:grid; grid-template-columns:1.2fr .8fr; gap:60px; }
+    .about { background:#edf3f8; border-top:1px solid #dce7f0; border-bottom:1px solid #dce7f0; }
+    .about p { color:#405368; }
+    .details { border-left:2px solid #8ab7df; padding-left:26px; }
+    .detail { margin-bottom:28px; }
+    .detail:last-child { margin-bottom:0; }
+    .detail strong { display:block; color:#11283e; font-size:.9rem; margin-bottom:4px; }
+    .detail span { color:#53677b; font-size:.9rem; }
+    .contact { text-align:center; }
+    .contact p { color:var(--muted); max-width:580px; margin:0 auto 25px; }
+    .contact .button { background:var(--navy); color:white; border-color:var(--navy); }
+    .contact-links { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:24px; color:var(--blue); font-size:.9rem; }
+    .contact-links a:hover { text-decoration:underline; }
+    .footer { background:var(--navy); color:#aab8ca; padding:25px 0; font-size:.82rem; }
+    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+    @media(max-width:700px) { .nav-inner { align-items:flex-start; flex-direction:column; padding:18px 0; gap:10px; } .nav-links { gap:16px; } .hero { padding:76px 0; } section { padding:60px 0; } .projects,.about-wrap { grid-template-columns:1fr; } .about-wrap { gap:32px; } .card-art { height:160px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+  
+.project-hero{background:linear-gradient(125deg,#0b1321,#163451);color:#fff;padding:80px 0 74px}
+.project-hero h1{font-size:clamp(2.3rem,5vw,4rem)}.project-hero .lead{max-width:800px;color:#ccdae9;font-size:1.12rem}
+.project-page{max-width:920px}.project-block{padding:56px 0;border-bottom:1px solid var(--line)}.project-block:last-child{border-bottom:0}
+.project-block p{color:#405368}.project-block h2{margin-bottom:17px}.project-block h3{font-size:1.08rem;margin-top:24px}
+.info-bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.info-bar span{padding:7px 13px;border:1px solid #6387a5;border-radius:5px;color:#dfebf5;font-size:.8rem}
+.diagram-panel{background:#11273c;border-radius:9px;padding:25px;margin:26px 0;color:#d1e5f4}.diagram-panel svg{width:100%;height:auto;display:block}
+.formula{font:1.04rem/1.8 'Cambria Math',Georgia,serif;background:#edf3f8;padding:18px 23px;border-left:3px solid #4385b9;overflow-x:auto}
+.source-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.source-links a{display:inline-block;border:1px solid #b5c9db;border-radius:5px;padding:9px 15px;color:#1965ad;font-weight:650}
+.source-links a:hover{background:#edf3f8}.note{background:#f0f5f9;border-left:3px solid #8cb7d6;padding:14px 18px;color:#41566c;font-size:.9rem}
+.code-preview{background:#0b1828;color:#d7ebfd;border-radius:9px;padding:20px;overflow:auto;font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace}
+.render-placeholder{margin-top:24px;background:#eaf0f5;border:1px dashed #9ab2c7;border-radius:9px;min-height:175px;display:flex;align-items:center;justify-content:center;text-align:center;padding:26px;color:#667e91;font-size:.9rem}
+.small-copy{font-size:.88rem;color:#617086}.back-link{color:#c8e0f5;font-size:.88rem}.back-link:hover{text-decoration:underline}
+</style></head><body><header class="nav"><div class="container nav-inner"><a class="brand" href="../index.html">Jonathan Stancill</a><nav class="nav-links" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main><div class="project-hero"><div class="container"><a class="back-link" href="../index.html#projects">← All projects</a><p class="eyebrow" style="margin-top:27px">Georgia Tech Supersonics · Engineering projects</p><h1>Aircraft &amp; Propulsion Development</h1><p class="lead">Work spanning afterburner component research and design, fuel-system pressure-loss analysis, and parametric wing geometry development.</p><div class="info-bar"><span>Propulsion systems</span><span>Python + MATLAB</span><span>nTop</span><span>Computational design</span></div></div></div>
+<div class="container project-page"><section class="project-block" id="afterburner"><div class="section-tag">01 / Propulsion</div><h2>Afterburner component development</h2><p>As part of GT Supersonics, I have contributed to an experimental afterburner project through flameholder research and design work, fuel injector development, and examination of an ignition approach using a glow plug.</p><p>My involvement has centered on understanding how flame stabilization, fuel delivery, and ignition interact within the combustion system. This has included technical reading and design exploration rather than a claim of completed hardware qualification or validated performance.</p><h3>Areas of contribution</h3><p>Flameholder research and preliminary design considerations; work on fuel injector concepts; investigation of glow-plug ignition and subsystem integration.</p><div class="render-placeholder">Approved afterburner / flameholder render can be placed here.</div></section>
+<section class="project-block" id="fuel-analysis"><div class="section-tag">02 / Independent computational work</div><h2>Fuel-system pressure-loss analysis</h2><p>I independently wrote both Python and MATLAB implementations of a pressure-loss calculation for the piping between a fuel tank and injector system. The calculation combines Darcy–Weisbach frictional losses in straight pipes with the 3K method for fitting losses.</p><p>The program estimates total pressure drop for specified fluid properties, pipe dimensions, flow velocity, Reynolds number, and fitting coefficients. The results contributed to a broader design effort to determine fuel tank requirements and charging pressure, with a goal of supporting <strong>10 seconds of burn time while keeping system weight low</strong>.</p>
+<div class="diagram-panel"><svg viewBox="0 0 760 185" role="img" aria-label="Simplified schematic: tank flows through piping and fittings to an injector; pressure losses are calculated along the flow"><g fill="none" stroke="#a4cce5" stroke-width="3"><rect x="25" y="50" width="125" height="100" rx="30"/><path d="M87 50 V22 H220 V93 H340 V55 H475 V102 H565"/><path d="M566 82 H627 V123 H566 Z"/><path d="M630 102 H723" stroke="#e7bb79"/><path d="M706 90 L723 102 L706 114" stroke="#e7bb79"/></g><g fill="#d1e5f4" font-family="Arial,sans-serif" font-size="18"><text x="87" y="108" text-anchor="middle">Tank</text><text x="282" y="121" text-anchor="middle">Pipe friction</text><text x="421" y="38" text-anchor="middle">Fittings</text><text x="597" y="149" text-anchor="middle">Injector</text></g><g fill="#e6bd84" font-size="24"><text x="345" y="153">ΔP</text></g></svg></div>
+<h3>Modeling approach</h3><p><strong>1. Straight-pipe loss:</strong> Calculate frictional head loss with the Darcy–Weisbach equation.</p><div class="formula">h<sub>f</sub> = f (L / D) · V² / (2g)</div><p><strong>2. Fitting loss:</strong> Estimate each fitting's loss coefficient using the 3K method, then calculate its corresponding head loss.</p><div class="formula">K = K₁ / Re + K<sub>∞</sub> [1 + K<sub>d</sub> / D<sup>0.3</sup>]<br>h<sub>m</sub> = K · V² / (2g)</div><p><strong>3. System pressure drop:</strong> Sum the head losses and convert to pressure.</p><div class="formula">ΔP = ρg · Σh<sub>loss</sub></div>
+<h3>Implementation</h3><p>Both versions use separate functions for straight-pipe head loss and 3K-based fitting head loss, then sum the contributions. The code allows fitting types and quantities to be represented through their associated coefficients and repeated calculations.</p>
+<pre class="code-preview"><code># Core calculation (simplified excerpt)
+straight_loss = f * (L / D) * (V**2 / (2*g))
+K = K1 / Re + K_inf * (1 + K_d / (D_nom**0.3))
+fitting_loss = K * (V**2 / (2*g))
+pressure_drop_pa = rho * g * (straight_loss + total_fitting_loss)</code></pre>
+<div class="source-links"><a href="../code/pressure_drop.py" download>Download Python implementation ↗</a><a href="../code/pDrop.m" download>Download MATLAB implementation ↗</a></div>
+<p class="small-copy">The downloadable versions preserve the original calculation logic and sample input values. They are example-driven calculation scripts, not a complete automated tank-mass optimizer or a validated fuel-system design.</p>
+<p class="note">Technical note: pressure-loss results inform charging-pressure and tank-size decisions, but this code alone does not calculate minimum system mass or independently establish a tank sized for 10 seconds of operation. Inputs and 3K coefficient units should be checked against the intended physical configuration before using its numerical output for design.</p></section>
+<section class="project-block" id="wing-design"><div class="section-tag">03 / Aircraft geometry</div><h2>Parametric wing design in nTop</h2><p>I used nTop to create and modify wing geometry through a parametric modeling workflow as part of GT Supersonics' aircraft design work. This introduced an approach to designing aircraft geometry in which parameters can be adjusted to support successive iterations without rebuilding every feature from scratch.</p><p>The work complements my propulsion experience by developing familiarity with computational geometry tools used in early aircraft design.</p><div class="render-placeholder">Approved nTop wing geometry renders can be placed here.</div></section>
+<section class="project-block"><div class="section-tag">Reflection</div><h2>What this work has taught me</h2><p>These projects have reinforced that successful aerospace design depends on understanding how individual components affect the larger system. In the fuel analysis, piping losses influenced questions about tank pressure and weight. In the afterburner, flameholding, injection, and ignition must be considered together. Working across these areas has strengthened my interest in combining analytical work with practical aerospace design.</p><p><a class="card-link" href="../index.html#projects">← Back to all projects</a></p></section></div></main>
+<footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Jonathan Stancill</span><span>Built with GitHub Pages</span></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>

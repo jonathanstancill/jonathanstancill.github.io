@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jonathan Stancill | Aerospace engineering student at Georgia Tech. Engineering projects in aircraft design, propulsion, and research.">
-  <meta name="theme-color" content="#0b1321">
-  <title>Jonathan Stancill | Aerospace Engineering</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Jonathan Stancill | Aerospace engineering student at Georgia Tech. Engineering projects in aircraft design, propulsion, and research." name="description"/>
+<meta content="#0b1321" name="theme-color"/>
+<title>Jonathan Stancill | Aerospace Engineering</title>
+<style>
     :root { --navy:#0b1321; --ink:#142136; --muted:#617086; --line:#dce4ed; --paper:#f8fafc; --blue:#1965ad; --white:#fff; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
@@ -59,90 +60,82 @@
     .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
     @media(max-width:700px) { .nav-inner { align-items:flex-start; flex-direction:column; padding:18px 0; gap:10px; } .nav-links { gap:16px; } .hero { padding:76px 0; } section { padding:60px 0; } .projects,.about-wrap { grid-template-columns:1fr; } .about-wrap { gap:32px; } .card-art { height:160px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
-  </style>
+  
+    .card-art.diagram {background:#10253b; padding:16px;}
+    .card-art svg {max-width:100%;height:100%;}
+    .card-art.placeholder {background:linear-gradient(145deg,#18334d,#21445e);font-size:.72rem;}
+    .card-link {display:inline-block;margin-top:10px;color:var(--blue);font-size:.88rem;font-weight:750;}
+    .card-link:hover {text-decoration:underline;}
+    .project-spotlight {background:#fff;border-block:1px solid var(--line);}
+    .spotlight-grid {display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+    .stat-line {display:flex;gap:12px;align-items:center;padding:15px 0;border-top:1px solid var(--line);font-size:.9rem;}
+    .stat-line strong {min-width:100px;color:#11283e;}
+    @media(max-width:700px){.spotlight-grid{grid-template-columns:1fr;gap:18px;}}
+</style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">Jonathan Stancill</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <!-- Add a resume.pdf file to your repository, then uncomment this link:
+<header class="nav">
+<div class="container nav-inner">
+<a class="brand" href="#top">Jonathan Stancill</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<!-- Add a resume.pdf file to your repository, then uncomment this link:
         <a href="resume.pdf" target="_blank" rel="noopener">Resume</a> -->
-      </nav>
-    </div>
-  </header>
-  <main id="top">
-    <div class="hero">
-      <div class="container">
-        <p class="eyebrow">Georgia Institute of Technology · Aerospace Engineering</p>
-        <h1>Jonathan Stancill</h1>
-        <p class="lead">Aerospace engineering student focused on aircraft design, aerodynamics, and propulsion. I enjoy taking engineering ideas from analysis and design into hands-on testing.</p>
-        <div class="buttons">
-          <a class="button primary" href="#projects">Explore projects →</a>
-          <a class="button secondary" href="#contact">Get in touch</a>
-        </div>
-      </div>
-    </div>
-    <section id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <div class="section-head">
-          <div><div class="section-tag">Selected work</div><h2 id="projects-title">Engineering projects</h2><p class="section-sub">Research, design, and hands-on engineering work. Detailed project write-ups and technical results are being added.</p></div>
-        </div>
-        <div class="projects">
-          <article class="card">
-            <div class="card-art" aria-label="Placeholder for GT Supersonics project image">Project image coming soon</div>
-            <div class="card-body">
-              <div class="meta">Georgia Tech Supersonics</div>
-              <h3>Supersonic aircraft & propulsion</h3>
-              <p>Engineering work with GT Supersonics, including involvement in aircraft design and afterburner development and testing. A technical case study is in progress.</p>
-              <span class="pill">Aircraft design</span><span class="pill">Propulsion</span><span class="pill">Testing</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-art" aria-label="Placeholder for ISEF research project image">Project image coming soon</div>
-            <div class="card-body">
-              <div class="meta">Independent research · ISEF</div>
-              <h3>Hydrodynamics & engineering research</h3>
-              <p>An early research project that introduced me to hydrodynamics and propulsion design, and helped shape my interest in aerospace engineering. Project details are coming soon.</p>
-              <span class="pill">Research</span><span class="pill">Hydrodynamics</span><span class="pill">Design</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="about" aria-labelledby="about-title">
-      <div class="container about-wrap">
-        <div>
-          <div class="section-tag">Background</div><h2 id="about-title">About me</h2>
-          <p>I'm an aerospace engineering student at the Georgia Institute of Technology with a strong interest in aerodynamics, propulsion, and aircraft design.</p>
-          <p>My interest in engineering began with robotics and expanded through research involving hydrodynamics and propulsion. At Georgia Tech, working with GT Supersonics has given me opportunities to explore the engineering challenges behind high-speed flight.</p>
-          <p>I'm particularly interested in work that combines rigorous analysis with practical design, building, and testing.</p>
-        </div>
-        <aside class="details" aria-label="Education and interests">
-          <div class="detail"><strong>Education</strong><span>Georgia Institute of Technology<br>B.S. Aerospace Engineering, in progress</span></div>
-          <div class="detail"><strong>Technical interests</strong><span>Aerodynamics · Propulsion · Aircraft design · Engineering research</span></div>
-          <div class="detail"><strong>Engineering team</strong><span>Georgia Tech Supersonics</span></div>
-        </aside>
-      </div>
-    </section>
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="section-tag">Connect</div><h2 id="contact-title">Let's connect</h2>
-        <p>Interested in discussing aerospace projects, research, or engineering opportunities? You can find my work on GitHub or reach out through LinkedIn.</p>
-        <a class="button" href="https://github.com/jonathanstancill" target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
-        <div class="contact-links">
-          <!-- Replace # with your actual LinkedIn profile URL: -->
-          <a href="#contact" title="Add your LinkedIn URL here">LinkedIn (add link)</a>
-          <!-- Replace the text below with your public professional contact email when ready: -->
-          <span>Email (add address)</span>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Jonathan Stancill</span><span>Built with GitHub Pages</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</nav>
+</div>
+</header>
+<main id="top">
+<div class="hero">
+<div class="container">
+<p class="eyebrow">Georgia Institute of Technology · Aerospace Engineering</p>
+<h1>Jonathan Stancill</h1>
+<p class="lead">Aerospace engineering student at Georgia Tech working across propulsion, fuel-system analysis, and computational aircraft design. I enjoy connecting engineering fundamentals with practical design decisions.</p>
+<div class="buttons">
+<a class="button primary" href="#projects">Explore projects →</a>
+<a class="button secondary" href="#contact">Get in touch</a>
+</div>
+</div>
+</div>
+<section aria-labelledby="projects-title" id="projects">
+<div class="container">
+<div class="section-head">
+<div><div class="section-tag">Selected work</div><h2 id="projects-title">Engineering projects</h2><p class="section-sub">Selected work in propulsion, computational analysis, aircraft geometry, and independent research.</p></div>
+</div>
+<div class="projects"><article class="card"><div class="card-art diagram"><svg aria-label="Abstract schematic illustration of an afterburner section" role="img" viewbox="0 0 420 160"><g fill="none" stroke="#8bbbd5" stroke-width="2"><path d="M25 41 H395 M25 119 H395"></path><path d="M65 41 L100 72 L65 119 M125 41 L160 72 L125 119"></path><path d="M205 43 L240 80 L205 117 M240 80 L275 43 M240 80 L275 117"></path><path d="M310 55 H375 M310 105 H375"></path></g><g fill="none" stroke="#d4a669" stroke-width="2"><path d="M22 80 H74 M165 80 H205 M275 80 H391" stroke-dasharray="6 5"></path><path d="M330 63 L348 80 L330 97"></path></g></svg></div><div class="card-body"><div class="meta">GT Supersonics · Propulsion</div><h3>Afterburner component development</h3><p>Researched flameholder design and contributed to fuel injector and glow-plug ignition concepts for an experimental afterburner.</p><span class="pill">Combustion</span><span class="pill">Fuel injection</span><span class="pill">Ignition</span><div><a class="card-link" href="projects/gt-supersonics.html#afterburner">Read project details →</a></div></div></article><article class="card"><div class="card-art diagram"><svg aria-label="Conceptual fuel tank to injector flow diagram" role="img" viewbox="0 0 420 160"><g fill="none" stroke="#a5c4d7" stroke-width="2"><rect height="80" rx="24" width="78" x="32" y="40"></rect><path d="M71 40 V27 H134 V63 H220 V95 H290"></path><rect height="37" rx="4" width="45" x="288" y="77"></rect><path d="M335 95 H389 M375 85 L389 95 L375 105" stroke="#e7bf85"></path><path d="M220 63 v32"></path><circle cx="220" cy="63" fill="#8bbbd5" r="5"></circle></g><g fill="#d3e4ec" font-family="sans-serif" font-size="15"><text text-anchor="middle" x="71" y="84">Tank</text><text x="240" y="48">ΔP</text><text font-size="12" text-anchor="middle" x="312" y="132">Injector</text></g></svg></div><div class="card-body"><div class="meta">GT Supersonics · Independent code</div><h3>Fuel-system pressure-loss analysis</h3><p>Independently wrote Python and MATLAB implementations of Darcy–Weisbach and 3K fitting-loss calculations to inform tank-pressure and weight tradeoffs for a 10-second burn objective.</p><span class="pill">Python</span><span class="pill">MATLAB</span><span class="pill">Fluid mechanics</span><div><a class="card-link" href="projects/gt-supersonics.html#fuel-analysis">Read project details →</a></div></div></article><article class="card"><div class="card-art diagram"><svg aria-label="Abstract wireframe wing geometry illustration" role="img" viewbox="0 0 420 160"><g fill="none" stroke="#a4cde0" stroke-width="1.7"><path d="M45 125 L151 41 L366 83 L45 125 Z"></path><path d="M58 123 L155 51 L342 86 M77 121 L161 63 L315 90 M98 117 L171 76 L281 95 M122 114 L180 87 L249 99 M148 110 L193 96 L216 104"></path><path d="M45 125 L155 51 M98 117 L171 76 M148 110 L193 96"></path></g></svg></div><div class="card-body"><div class="meta">GT Supersonics · Aircraft design</div><h3>Parametric wing modeling</h3><p>Used nTop to create and iterate wing geometry within a parametric design workflow. Approved geometry renders will be added when available.</p><span class="pill">nTop</span><span class="pill">Parametric CAD</span><span class="pill">Wing geometry</span><div><a class="card-link" href="projects/gt-supersonics.html#wing-design">Read project details →</a></div></div></article><article class="card"><div class="card-art placeholder">Research project imagery to be added</div><div class="card-body"><div class="meta">Independent research · ISEF</div><h3>Hydrodynamics &amp; engineering research</h3><p>Earlier independent research involving hydrodynamics and propulsion design helped shape my interest in aerospace engineering. A detailed case study will follow.</p><span class="pill">Research</span><span class="pill">Hydrodynamics</span><span class="pill">Propulsion</span></div></article></div>
+</div>
+</section>
+<section aria-labelledby="spotlight-title" class="project-spotlight"><div class="container spotlight-grid"><div><div class="section-tag">Technical spotlight</div><h2 id="spotlight-title">Pressure-loss modeling for an afterburner fuel system</h2><p class="section-sub">I independently developed equivalent Python and MATLAB programs combining Darcy–Weisbach pipe friction and the 3K fitting-loss method. The analysis supported tank charging-pressure and weight decisions for a 10-second burn-time target.</p><p><a class="card-link" href="projects/gt-supersonics.html#fuel-analysis">Explore the engineering approach →</a></p></div><div><div class="stat-line"><strong>Methods</strong><span>Darcy–Weisbach + 3K</span></div><div class="stat-line"><strong>Languages</strong><span>Python &amp; MATLAB</span></div><div class="stat-line"><strong>Design goal</strong><span>10 seconds of burn with minimum system weight</span></div><div class="stat-line"><strong>My role</strong><span>Independent implementation</span></div></div></div></section><section aria-labelledby="about-title" class="about" id="about">
+<div class="container about-wrap">
+<div>
+<div class="section-tag">Background</div><h2 id="about-title">About me</h2>
+<p>I'm an aerospace engineering student at the Georgia Institute of Technology with a strong interest in aerodynamics, propulsion, and aircraft design.</p>
+<p>My interest in engineering began with robotics and expanded through research involving hydrodynamics and propulsion. At Georgia Tech, working with GT Supersonics has given me opportunities to explore the engineering challenges behind high-speed flight.</p>
+<p>I'm particularly interested in work that combines rigorous analysis with practical design, building, and testing.</p>
+</div>
+<aside aria-label="Education and interests" class="details">
+<div class="detail"><strong>Education</strong><span>Georgia Institute of Technology<br/>B.S. Aerospace Engineering, in progress</span></div>
+<div class="detail"><strong>Technical interests</strong><span>Aerodynamics · Propulsion · Aircraft design · Engineering research</span></div>
+<div class="detail"><strong>Engineering team</strong><span>Georgia Tech Supersonics</span></div>
+</aside>
+</div>
+</section>
+<section aria-labelledby="contact-title" class="contact" id="contact">
+<div class="container">
+<div class="section-tag">Connect</div><h2 id="contact-title">Let's connect</h2>
+<p>Interested in discussing aerospace projects, research, or engineering opportunities? You can find my work on GitHub or reach out through LinkedIn.</p>
+<a class="button" href="https://github.com/jonathanstancill" rel="noopener noreferrer" target="_blank">View GitHub profile ↗</a>
+<div class="contact-links">
+<!-- Replace # with your actual LinkedIn profile URL: -->
+<a href="#contact" title="Add your LinkedIn URL here">LinkedIn (add link)</a>
+<!-- Replace the text below with your public professional contact email when ready: -->
+<span>Email (add address)</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Jonathan Stancill</span><span>Built with GitHub Pages</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
